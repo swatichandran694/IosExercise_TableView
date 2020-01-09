@@ -11,6 +11,18 @@ import UIKit
 class DetailsTableViewCell: UITableViewCell {
 
 
+    var details:DetailsData? {
+        didSet {
+            guard let detailItem = details else {return}
+            if let name = detailItem.name {
+                detailsImageView.image = UIImage(named: "No_Image")
+                nameLabel.text = name
+            }
+            if let description = detailItem.description {
+                detailedLabel.text = " \(description) "
+            }
+        }
+    }
     
     let containerView:UIView = {
         let view = UIView()
