@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3EE3AEC523C6FA5800BA6131 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */; };
 		3EE3AEC823C6FAB300BA6131 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3AEC723C6FAB300BA6131 /* DetailsTableViewCell.swift */; };
+		3EE3AECC23C7274F00BA6131 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3AECA23C7274F00BA6131 /* Details.swift */; };
+		3EE3AECD23C7274F00BA6131 /* DetailsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3AECB23C7274F00BA6131 /* DetailsAPI.swift */; };
 		60C6AE9423C6F93000F76C3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C6AE9323C6F93000F76C3C /* AppDelegate.swift */; };
 		60C6AE9B23C6F93400F76C3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C6AE9A23C6F93400F76C3C /* Assets.xcassets */; };
 		60C6AE9E23C6F93400F76C3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C6AE9C23C6F93400F76C3C /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3EE3AEC723C6FAB300BA6131 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3EE3AECA23C7274F00BA6131 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		3EE3AECB23C7274F00BA6131 /* DetailsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsAPI.swift; sourceTree = "<group>"; };
 		60C6AE9023C6F93000F76C3C /* IosExercise_TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosExercise_TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C6AE9323C6F93000F76C3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C6AE9A23C6F93400F76C3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		3EE3AEC923C7243800BA6131 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3EE3AECA23C7274F00BA6131 /* Details.swift */,
+				3EE3AECB23C7274F00BA6131 /* DetailsAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +287,8 @@
 			files = (
 				3EE3AEC823C6FAB300BA6131 /* DetailsTableViewCell.swift in Sources */,
 				60C6AE9423C6F93000F76C3C /* AppDelegate.swift in Sources */,
+				3EE3AECD23C7274F00BA6131 /* DetailsAPI.swift in Sources */,
+				3EE3AECC23C7274F00BA6131 /* Details.swift in Sources */,
 				3EE3AEC523C6FA5800BA6131 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
