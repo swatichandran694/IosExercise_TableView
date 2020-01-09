@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EE3AEC523C6FA5800BA6131 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */; };
 		60C6AE9423C6F93000F76C3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C6AE9323C6F93000F76C3C /* AppDelegate.swift */; };
 		60C6AE9B23C6F93400F76C3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C6AE9A23C6F93400F76C3C /* Assets.xcassets */; };
 		60C6AE9E23C6F93400F76C3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C6AE9C23C6F93400F76C3C /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		60C6AE9023C6F93000F76C3C /* IosExercise_TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosExercise_TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C6AE9323C6F93000F76C3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C6AE9A23C6F93400F76C3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EE3AEC123C6F9DA00BA6131 /* Home view */ = {
+			isa = PBXGroup;
+			children = (
+				3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */,
+			);
+			path = "Home view";
+			sourceTree = "<group>";
+		};
 		60C6AE8723C6F93000F76C3C = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		60C6AE9223C6F93000F76C3C /* IosExercise_TableView */ = {
 			isa = PBXGroup;
 			children = (
+				3EE3AEC123C6F9DA00BA6131 /* Home view */,
 				60C6AE9323C6F93000F76C3C /* AppDelegate.swift */,
 				60C6AE9A23C6F93400F76C3C /* Assets.xcassets */,
 				60C6AE9C23C6F93400F76C3C /* LaunchScreen.storyboard */,
@@ -250,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60C6AE9423C6F93000F76C3C /* AppDelegate.swift in Sources */,
+				3EE3AEC523C6FA5800BA6131 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
