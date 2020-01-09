@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
+     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,11 @@ class HomeViewController: UIViewController {
         
         func setupTableView() {
             
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+            refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh")
+            tableView.refreshControl = refreshControl
+            
             view.addSubview(tableView)
             tableView.translatesAutoresizingMaskIntoConstraints = false
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
@@ -37,6 +43,8 @@ class HomeViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
             tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "cell")
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 300
             tableView.dataSource = self
             tableView.delegate = self
         }
@@ -49,5 +57,13 @@ class HomeViewController: UIViewController {
             cell.selectionStyle = .none
             cell.textLabel?.text = "test data"
             return cell
+        }
+        
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return UITableViewAutomaticDimension
+        }
+        
+        @objc func refreshData(refreshControl: UIRefreshControl) {
+            refreshControl.endRefreshing()
         }
 }
