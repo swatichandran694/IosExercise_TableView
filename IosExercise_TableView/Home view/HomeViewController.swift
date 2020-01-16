@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
@@ -17,16 +17,28 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = viewModel.navigationTitle
         setupUI()
     }
     
     func setupUI() {
         view.backgroundColor = .green
         safeArea = view.layoutMarginsGuide
-        viewModel.model = DetailsAPI()
         setupTableView()
+        fetchData()
         
+    }
+    
+    func fetchData()  {
+        showActivityIndicator(isShow: true)
+        DetailsAPI().getRequestWith(baseUrl+kApifacts) { (error, dataDetails) in
+            DispatchQueue.main.async {
+                guard let datas = dataDetails else { return }
+                self.viewModel.model = datas
+                self.navigationItem.title = self.viewModel.navigationTitle
+                self.tableView.reloadData()
+                self.showActivityIndicator(isShow: false)
+            }
+        }
     }
 }
     extension HomeViewController: UITableViewDataSource , UITableViewDelegate{
@@ -55,10 +67,13 @@ class HomeViewController: UIViewController {
             return viewModel.numberOfRows()
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)  as! DetailsTableViewCell
-            cell.selectionStyle = .none
-            cell.details = viewModel.itemAtIndex(index: indexPath.row)
-            return cell
+            var cell:DetailsTableViewCell?
+            if cell == nil {
+                cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)  as? DetailsTableViewCell
+            }
+            cell!.selectionStyle = .none
+            cell!.details = viewModel.itemAtIndex(index: indexPath.row)
+            return cell!
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,6 +89,7 @@ class HomeViewController: UIViewController {
         }
         
         @objc func refreshData(refreshControl: UIRefreshControl) {
+            fetchData()
             refreshControl.endRefreshing()
         }
 }
