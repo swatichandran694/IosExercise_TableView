@@ -86,12 +86,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E134F1623D04BF900501531 /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				3E134F1023D04B9A00501531 /* CustomImageView.swift */,
+				3EE3AEC923C7243800BA6131 /* Model */,
+			);
+			path = "Custom classes";
+			sourceTree = "<group>";
+		};
+		3E134F1723D04C0700501531 /* Api manager */ = {
+			isa = PBXGroup;
+			children = (
+				3E134F1223D04B9A00501531 /* Constants.swift */,
+				3EE3AECB23C7274F00BA6131 /* DetailsAPI.swift */,
+			);
+			path = "Api manager";
+			sourceTree = "<group>";
+		};
 		3EE3AEC123C6F9DA00BA6131 /* Home view */ = {
 			isa = PBXGroup;
 			children = (
 				3E134F1123D04B9A00501531 /* BaseViewController.swift */,
-				3E134F1223D04B9A00501531 /* Constants.swift */,
-				3E134F1023D04B9A00501531 /* CustomImageView.swift */,
 				3EE3AEC423C6FA5800BA6131 /* HomeViewController.swift */,
 			);
 			path = "Home view";
@@ -110,7 +126,6 @@
 			children = (
 				3EE3AECE23C75AC200BA6131 /* DetailsViewModel.swift */,
 				3EE3AECA23C7274F00BA6131 /* Details.swift */,
-				3EE3AECB23C7274F00BA6131 /* DetailsAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,7 +153,8 @@
 		60C6AE9223C6F93000F76C3C /* IosExercise_TableView */ = {
 			isa = PBXGroup;
 			children = (
-				3EE3AEC923C7243800BA6131 /* Model */,
+				3E134F1723D04C0700501531 /* Api manager */,
+				3E134F1623D04BF900501531 /* Custom classes */,
 				3EE3AEC623C6FA8C00BA6131 /* Tableview Cell */,
 				3EE3AEC123C6F9DA00BA6131 /* Home view */,
 				60C6AE9323C6F93000F76C3C /* AppDelegate.swift */,
