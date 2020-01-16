@@ -8,7 +8,17 @@
 
 import Foundation
 
-struct DetailsData {
-    let name:String?
-    let description:String?
+struct Rows: Codable {
+    
+    let title: String?
+    
+    let description: String?
+    
+    let imageHref: String?
+}
+struct Details: Codable {
+    
+    let title: String?
+    
+    let rows: [Rows]?
 }
