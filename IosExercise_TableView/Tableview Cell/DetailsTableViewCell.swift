@@ -80,8 +80,8 @@ class DetailsTableViewCell: UITableViewCell {
         
         detailsImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         detailsImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:5).isActive = true
-        detailsImageView.widthAnchor.constraint(equalToConstant:100).isActive = true
-        detailsImageView.heightAnchor.constraint(equalToConstant:100).isActive = true
+        detailsImageView.widthAnchor.constraint(equalToConstant:70).isActive = true
+        detailsImageView.heightAnchor.constraint(equalToConstant:70).isActive = true
         
         containerView.topAnchor.constraint(equalTo:self.contentView.topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo:self.contentView.bottomAnchor).isActive = true
