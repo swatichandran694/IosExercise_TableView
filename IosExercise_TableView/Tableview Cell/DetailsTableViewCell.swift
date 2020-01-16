@@ -11,16 +11,20 @@ import UIKit
 class DetailsTableViewCell: UITableViewCell {
 
 
-    var details:DetailsData? {
+    var details:Rows? {
         didSet {
             guard let detailItem = details else {return}
-            if let name = detailItem.name {
-                detailsImageView.image = UIImage(named: "No_Image")
+            if let name = detailItem.title {
                 nameLabel.text = name
             }
-            if let description = detailItem.description {
-                detailedLabel.text = " \(description) "
+            if let imageHref = detailItem.imageHref {
+                detailsImageView.image = UIImage(named: "No_Image")
+                detailsImageView.downloadImageFrom(urlString: imageHref, imageMode: .scaleAspectFit)
             }
+            else{
+                detailsImageView.image = UIImage(named: "No_Image")
+            }
+            detailedLabel.text = detailItem.description
         }
     }
     
@@ -33,8 +37,8 @@ class DetailsTableViewCell: UITableViewCell {
         return view
     }()
     
-    let detailsImageView:UIImageView = {
-        let img = UIImageView()
+    let detailsImageView:CustomImageView = {
+        let img = CustomImageView()
         img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
         img.layer.cornerRadius = img.frame.size.width / 2

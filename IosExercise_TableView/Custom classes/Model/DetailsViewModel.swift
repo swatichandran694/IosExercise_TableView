@@ -9,32 +9,32 @@
 import Foundation
 
 protocol DetailsViewModelProtocol {
-    var model : DetailsAPI? { get set }
+    var model : Details? { get set }
     func numberOfRows() -> Int
-    func itemAtIndex(index: Int) -> DetailsData?
+    func itemAtIndex(index: Int) -> Rows?
     var navigationTitle: String? { get }
     
 }
 
 class DetailsViewModel: DetailsViewModelProtocol {
-    var notificationItems =  [DetailsData]()
-    var model: DetailsAPI? {
+    var notificationItems =  [Rows]()
+    var model: Details? {
         didSet{
-            guard let deails = model?.getDetails() else { return }
-            self.notificationItems = deails
+            guard let notDetails = model?.rows else { return }
+            self.notificationItems = notDetails
         }
     }
     
     var navigationTitle: String? {
-        return "Books History"
+        return model?.title
     }
     
     func numberOfRows() -> Int {
-        return notificationItems.count
+        return self.notificationItems.count
     }
     
-    func itemAtIndex(index: Int) -> DetailsData? {
-        return notificationItems[index]
+    func itemAtIndex(index: Int) -> Rows? {
+        return self.notificationItems[index]
     }
     
 }
