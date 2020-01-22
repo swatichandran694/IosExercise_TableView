@@ -32,11 +32,20 @@ class HomeViewController: BaseViewController {
         showActivityIndicator(isShow: true)
         DetailsAPI().getRequestWith(baseUrl+kApifacts) { (error, dataDetails) in
             DispatchQueue.main.async {
+                if error  == nil {
                 guard let datas = dataDetails else { return }
                 self.viewModel.model = datas
                 self.navigationItem.title = self.viewModel.navigationTitle
                 self.tableView.reloadData()
                 self.showActivityIndicator(isShow: false)
+                }
+                else {
+                    self.showActivityIndicator(isShow: false)
+                    
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }

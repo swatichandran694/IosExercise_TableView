@@ -47,6 +47,9 @@ class DetailsAPI {
                 print(response)
                 
             }
+            else {
+                completion(error! as NSError,nil)
+            }
 
             }.resume()
         

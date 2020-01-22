@@ -22,6 +22,11 @@ class DetailsViewModel: DetailsViewModelProtocol {
         didSet{
             guard let notDetails = model?.rows else { return }
             self.notificationItems = notDetails
+            for (i, item) in notDetails.enumerated().reversed() {
+                if item.title == nil && item.description == nil && item.imageHref == nil {
+                    notificationItems.remove(at:i)
+                }
+            }
         }
     }
     
